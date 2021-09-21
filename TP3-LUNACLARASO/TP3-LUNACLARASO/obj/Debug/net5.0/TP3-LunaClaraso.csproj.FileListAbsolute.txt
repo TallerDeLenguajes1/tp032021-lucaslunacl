@@ -38,5 +38,7 @@ C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021
 C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LunaClaraso\TP3-LunaClaraso\obj\Debug\net5.0\TP3-LunaClaraso.pdb
 C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LunaClaraso\TP3-LunaClaraso\obj\Debug\net5.0\TP3-LunaClaraso.genruntimeconfig.cache
 C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LunaClaraso\TP3-LunaClaraso\obj\Debug\net5.0\TP3-LunaClaraso.csproj.CopyComplete
-C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LunaClaraso\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Home\AltaCadete.cshtml.g.cs
-C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LunaClaraso\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Home\AltaPedido.cshtml.g.cs
+C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Cadete\AltaCadete.cshtml.g.cs
+C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Pedido\AltaPedido.cshtml.g.cs
+C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Cadete\Index.cshtml.g.cs
+C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Cadete\VerCadetes.cshtml.g.cs

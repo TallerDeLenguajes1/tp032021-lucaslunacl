@@ -1,6 +1,6 @@
 using System;
 
-namespace TP3_LUNACLARASO.Models
+namespace TP3_LunaClaraso.Models
 {
     public class ErrorViewModel
     {

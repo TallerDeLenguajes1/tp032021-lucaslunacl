@@ -11,7 +11,18 @@ a.navbar-brand {
 a {
   color: #0366d6;
 }
-
+.nav-item {
+    color: white;
+    background-color: #1CD4B0;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-left: 1rem;
+    transition: all 1s ease;
+}
+.nav-item:hover{
+    background-color:cyan;
+    
+}
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

@@ -8,11 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TP3_LunaClaraso.Models;
 
-namespace TP3_LUNACLARASO
+namespace TP3_LunaClaraso
 {
     public class Startup
     {
+        static readonly BDTemporal BD = new();
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +27,8 @@ namespace TP3_LUNACLARASO
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton(BD);
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

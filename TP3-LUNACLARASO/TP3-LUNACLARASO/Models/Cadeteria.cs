@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TP3_LUNACLARASO.Models
+namespace TP3_LunaClaraso.Models
 {
     public class Cadeteria
     {
-        string Nombre;
-        List<Cadete> ListadoCadetes;
+        public List<Cadete> Cadetes { get; set; }
+        public List<Pedidos> Pedidos { get; set; }
 
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public List<Cadete> ListadoCadetes1 { get => ListadoCadetes; set => ListadoCadetes = value; }
+        public Cadeteria()
+        {
+            Cadetes = new List<Cadete>();
+            Pedidos = new List<Pedidos>();
+        }
     }
 }

@@ -5,7 +5,7 @@
 
 
 <section class="section-padding mx-auto seccion-form">
-    <form action="php/resultado.php" method="POST" class="mx-auto form-login">
+    <form asp-action="DarAlta" asp-controller="Cadete" method="post" class="mx-auto form-login">
         <h2 class="mb-5 text-center" id="">Nuevo Cadete</h2>
         <div class="input-group">
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
@@ -20,5 +20,7 @@
             <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" aria-describedby="basic-addon1" name="telefono" required>
         </div>
         <button class="btn btn-primary w-100 mt-4" type="submit">Añadir Cadete</button>
+        <a asp-controller="Cadete" asp-action="VerCadetes"><button type="button" class="btn btn-success">Ver Cadetes</button></a>
+
     </form>
 </section>

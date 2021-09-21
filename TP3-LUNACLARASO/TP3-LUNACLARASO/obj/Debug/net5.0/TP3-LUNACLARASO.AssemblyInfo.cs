@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("TP3-LUNACLARASO")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TP3-LunaClaraso")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("TP3-LUNACLARASO")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TP3-LUNACLARASO")]
+[assembly: System.Reflection.AssemblyProductAttribute("TP3-LunaClaraso")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TP3-LunaClaraso")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

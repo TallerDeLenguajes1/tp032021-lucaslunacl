@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TP3_LUNACLARASO.Models
+namespace TP3_LunaClaraso.Models
 {
     public class Cadete
     {
-        int Id;
-        string Nombre;
-        string Direccion;
-        int Telefono;
-        List<Pedidos> ListadoPedidos;
-
-        public int Id1 { get => Id; set => Id = value; }
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public string Direccion1 { get => Direccion; set => Direccion = value; }
-        public int Telefono1 { get => Telefono; set => Telefono = value; }
-        public List<Pedidos> ListadoPedidos1 { get => ListadoPedidos; set => ListadoPedidos = value; }
+        int id;
+        string nombre;
+        string direccion;
+        long telefono;
+        List<Pedidos> ListadoDePedidos;
+        public Cadete(int id, string nombre, string direccion, long telefono)
+        {
+            Id = id;
+            Nombre = nombre;
+            Direccion = direccion;
+            Telefono = telefono;
+            ListadoDePedidos = new();
+        }
+        public int Id { get => id; set => id = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public long Telefono { get => telefono; set => telefono = value; }
+        public List<Pedidos> ListadoDePedidos1 { get => ListadoDePedidos; set => ListadoDePedidos = value; }
     }
 }

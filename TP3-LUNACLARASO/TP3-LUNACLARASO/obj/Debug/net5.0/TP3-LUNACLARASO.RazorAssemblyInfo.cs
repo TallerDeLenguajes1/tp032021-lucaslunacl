@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.RelatedAssemblyAttribute("TP3-LUNACLARASO.Views")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.RelatedAssemblyAttribute("TP3-LunaClaraso.Views")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
 

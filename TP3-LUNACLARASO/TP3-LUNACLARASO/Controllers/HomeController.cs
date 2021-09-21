@@ -5,17 +5,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using TP3_LUNACLARASO.Models;
+using TP3_LunaClaraso.Models;
 
-namespace TP3_LUNACLARASO.Controllers
+namespace TP3_LunaClaraso.Controllers
 {
     public class HomeController : Controller
     {
+        
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            
         }
 
         public IActionResult Index()
@@ -28,6 +31,14 @@ namespace TP3_LUNACLARASO.Controllers
             return View();
         }
 
+        public IActionResult AltaCadete()
+        {
+            return View();
+        }
+        public IActionResult AltaPedido()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

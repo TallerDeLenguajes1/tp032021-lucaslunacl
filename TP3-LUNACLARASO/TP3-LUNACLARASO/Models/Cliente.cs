@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TP3_LUNACLARASO.Models
+namespace TP3_LunaClaraso.Models
 {
     public class Cliente
     {
-        int Id;
-        string Nombre;
-        string Direccion;
-        int Telefono;
+        int id;
+        string nombre;
+        string direccion;
+        long telefono;
 
-        public int Id1 { get => Id; set => Id = value; }
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public string Direccion1 { get => Direccion; set => Direccion = value; }
-        public int Telefono1 { get => Telefono; set => Telefono = value; }
+        public Cliente(int id, string nombre, string direccion, long telefono) {
+
+            Id = id;
+            Nombre = nombre;
+            Direccion = direccion;
+            Telefono = telefono;
+        }
+        public int Id { get => id; set => id = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Direccion { get => direccion; set => direccion = value; }
+        public long Telefono { get => telefono; set => telefono = value; }
     }
 }

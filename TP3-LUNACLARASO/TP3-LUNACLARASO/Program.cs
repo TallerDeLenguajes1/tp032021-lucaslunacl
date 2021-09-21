@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TP3_LUNACLARASO
+namespace TP3_LunaClaraso
 {
     public class Program
     {
