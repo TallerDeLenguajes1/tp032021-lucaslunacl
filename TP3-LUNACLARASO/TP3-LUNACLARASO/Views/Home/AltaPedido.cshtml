@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Agregar Pedido";
+}
+
+<section class="section-padding mx-auto seccion-form">
+    <form action="php/resultado.php" method="POST" class="mx-auto form-login">
+        <h2 class="mb-5 text-center" id="">Nuevo Pedido</h2>
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+            <input type="text" class="form-control" placeholder="Nombre del Cadete" aria-label="Nombre del Cliente" aria-describedby="basic-addon1" name="nombre" required>
+        </div>
+        <div class="input-group mt-4">
+            <span class="input-group-text" id="basic-addon1"><i class="far fa-address-card"></i></span>
+            <input type="text" class="form-control" placeholder="Direccion del Cliente" aria-label="Direccion del Cliente" aria-describedby="basic-addon1" name="direccion" required>
+        </div>
+        <div class="input-group mt-4">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
+            <input type="text" class="form-control" placeholder="Telefono del Cliente" aria-label="Telefono del Cliente" aria-describedby="basic-addon1" name="telefono" required>
+        </div>
+        <div class="input-group mt-4">
+
+            <textarea class="form-control" placeholder="Observacion" aria-label="Observacion" aria-describedby="basic-addon1" name="observacion" required rows="3"></textarea>
+        </div>
+        <div class="input-group mt-4">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-bicycle"></i></span>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <button class="btn btn-primary w-100 mt-4" type="submit">Añadir Pedido</button>
+    </form>
+</section>
