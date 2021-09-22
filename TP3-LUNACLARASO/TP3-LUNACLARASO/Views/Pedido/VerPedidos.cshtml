@@ -16,7 +16,8 @@
             <th scope="col">Teléfono del Cliente</th>
             <th scope="col">Observacion</th>
             <th scope="col">Estado</th>
-            
+            <th scope="col">Acciones</th>
+
 
 
         </tr>
@@ -31,7 +32,14 @@
             <td>@item.Cliente.Telefono</td>
             <td>@item.Observacion</td>
             <td>@item.Estado</td>
-
+            <td>
+                <form class="row g-3" asp-action="BorrarPedido" asp-controller="Pedido" method="post">
+                    <div class="col-md-6 mt-3">
+                        <input type="hidden" id="idCadete" name="idCadete" value="@item.Nro">
+                        <button type="submit" class="btn btn-primary">Eliminar Cadete</button>
+                    </div>
+                </form>
+            </td>
         </tr>
         }
     </tbody>

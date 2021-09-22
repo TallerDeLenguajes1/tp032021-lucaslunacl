@@ -1,14 +1,27 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
+using TP3_LunaClaraso.Models;
 
 namespace TP3_LunaClaraso.Controllers
 {
     public class PedidoController : Controller
     {
+        static int id = 0;
+        private readonly ILogger<PedidoController> _logger;
+        private readonly BDTemporal _BD;
+
+        public PedidoController(ILogger<PedidoController> logger, BDTemporal BD)
+        {
+            _logger = logger;
+            _BD = BD;
+        }
+
         // GET: PedidoController
         public ActionResult Index()
         {
@@ -18,14 +31,30 @@ namespace TP3_LunaClaraso.Controllers
         // GET: PedidoController/Details/5
         public ActionResult AltaPedido()
         {
-            return View();
+            return View(_BD.Cadeteria.Cadetes);
         }
 
         // GET: PedidoController/Create
-        public ActionResult Create()
+        public ActionResult VerClientes()
         {
-            return View();
+            return View(_BD.Cadeteria.Clientes);
         }
+
+        public IActionResult VerPedidos()
+        {
+            
+            return View(_BD.Cadeteria.Pedidos);
+        }
+        public IActionResult DarAlta(int nro, string observacion, int idCliente, string nombre, string direccion, long telefono)
+        {
+            Pedidos nuevoPedido = new(++nro,observacion, idCliente, nombre,direccion,telefono);
+            _BD.Cadeteria.Pedidos.Add(nuevoPedido);
+            Cliente nuevoCliente = new(++nro, nombre,  direccion,  telefono);
+            _BD.Cadeteria.Clientes.Add(nuevoCliente);
+            
+            return View("VerPedidos", _BD.Cadeteria.Pedidos);
+        }
+
 
         // POST: PedidoController/Create
         [HttpPost]

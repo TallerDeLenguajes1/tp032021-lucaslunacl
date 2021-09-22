@@ -10,10 +10,12 @@ namespace TP3_LunaClaraso.Models
         public List<Cadete> Cadetes { get; set; }
         public List<Pedidos> Pedidos { get; set; }
 
+        public List<Cliente> Clientes { get; set; }
         public Cadeteria()
         {
             Cadetes = new List<Cadete>();
             Pedidos = new List<Pedidos>();
+            Clientes = new List<Cliente>();
         }
     }
 }

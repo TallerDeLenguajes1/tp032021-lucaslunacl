@@ -39,6 +39,15 @@ namespace TP3_LunaClaraso.Controllers
         {
             Cadete nuevoCadete = new (++id, nombre, direccion, Convert.ToInt64(telefono));
             _BD.Cadeteria.Cadetes.Add(nuevoCadete);
+            _BD.GuardarCadetes(nuevoCadete);
+            return View("Index", _BD.Cadeteria.Cadetes);
+        }
+        public IActionResult BorrarCadete(int idcadete)
+        {
+            _BD.Cadeteria.Cadetes.RemoveAll(cadete => cadete.Id == idcadete);
+
+            _BD.EliminarCadete();
+
             return View("Index", _BD.Cadeteria.Cadetes);
         }
        
