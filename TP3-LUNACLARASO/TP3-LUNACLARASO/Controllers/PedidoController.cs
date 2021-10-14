@@ -43,18 +43,49 @@ namespace TP3_LunaClaraso.Controllers
         public IActionResult VerPedidos()
         {
             
-            return View(_BD.Cadeteria.Pedidos);
+            return View(_BD.Cadeteria);
         }
         public IActionResult DarAlta(int nro, string observacion, int idCliente, string nombre, string direccion, long telefono)
-        {
+        {/*
             Pedidos nuevoPedido = new(++nro,observacion, idCliente, nombre,direccion,telefono);
             _BD.Cadeteria.Pedidos.Add(nuevoPedido);
             Cliente nuevoCliente = new(++nro, nombre,  direccion,  telefono);
             _BD.Cadeteria.Clientes.Add(nuevoCliente);
             
-            return View("VerPedidos", _BD.Cadeteria.Pedidos);
+            return View("VerPedidos", _BD.Cadeteria);
+            */
+            int ultimoNum = 100;
+            if (_BD.Cadeteria.Pedidos.Count() > 0)
+            {
+                ultimoNum = _BD.Cadeteria.Pedidos.Max(x => x.Nro);
+            }
+            ultimoNum++;
+            Pedidos nuevoPedido = new Pedidos(ultimoNum, observacion, idCliente, nombre, direccion, telefono);
+            _BD.Cadeteria.Pedidos.Add(nuevoPedido);
+            _BD.GuardarPedido(_BD.Cadeteria.Pedidos);
+            return View("VerPedidos", _BD.Cadeteria);
         }
+        public IActionResult BorrarCadete(int idpedido)
+        {
+            _BD.Cadeteria.Pedidos.RemoveAll(pedido => pedido.Nro == idpedido);
 
+            _BD.EliminarCadete();
+
+            return View("Index", _BD.Cadeteria.Pedidos);
+        }
+        public IActionResult AsignarCadete(int idPedido, int idCadete)
+        {
+            //QuitarPedidoDeCadete(idPedido);
+
+            if (idCadete != 0)
+            {
+                Cadete cadete = _BD.Cadeteria.Cadetes.Where(a => a.Id == idCadete).First();
+                Pedidos pedido = _BD.Cadeteria.Pedidos.Where(b => b.Nro == idPedido).First();
+                cadete.ListadoDePedidos1.Add(pedido);
+            }
+
+            return View("VerPedidos", _BD.Cadeteria);
+        }
 
         // POST: PedidoController/Create
         [HttpPost]

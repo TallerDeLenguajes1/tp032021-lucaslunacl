@@ -67,5 +67,55 @@ namespace TP3_LunaClaraso.Models
                 }
             }
         }
+        ///////////////////////////////////////////////////////////////////
+        ///
+        public void GuardarPedido(List<Pedidos> pedidos)
+        {
+            string ruta = @"Pedidos.json";
+            try
+            {
+                string pedidosJson = JsonSerializer.Serialize(pedidos);
+                using (FileStream miArchivo = new FileStream(ruta, FileMode.Create))
+                {
+                    using (StreamWriter strWrite = new StreamWriter(miArchivo))
+                    {
+                        strWrite.Write(pedidosJson);
+                        strWrite.Close();
+                        strWrite.Dispose();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+            }
+        }
+
+        public List<Pedidos> GetListPedidos()
+        {
+            List<Pedidos> pedidosJson = null;
+            string ruta = @"Pedidos.json";
+
+            try
+            {
+                if (File.Exists(ruta))
+                {
+                    using (FileStream miArchivo = new FileStream(ruta, FileMode.Open))
+                    {
+                        using (StreamReader strReader = new StreamReader(miArchivo))
+                        {
+                            string strPedidos = strReader.ReadToEnd();
+                            pedidosJson = JsonSerializer.Deserialize<List<Pedidos>>(strPedidos);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+            }
+            return pedidosJson;
+        }
     }
 }
