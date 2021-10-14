@@ -36,12 +36,7 @@
             <td>@item.Estado</td>
            
             <td>
-                <form class="row g-3" asp-action="BorrarPedido" asp-controller="Pedido" method="post">
-                    <div class="col-md-6 mt-3">
-                        <input type="hidden" id="idCadete" name="idCadete" value="@item.Nro">
-                        <button type="submit" class="btn btn-primary">Eliminar Pedido</button>
-                    </div>
-                </form>
+                @Html.ActionLink("Eliminar", "EliminarPedido", new { idPedido = item.Nro }, new { @class = "btnagre" })
             </td>
 
         </tr>

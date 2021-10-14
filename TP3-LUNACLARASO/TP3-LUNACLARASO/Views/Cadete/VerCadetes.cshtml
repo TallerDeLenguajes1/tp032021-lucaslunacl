@@ -15,7 +15,8 @@
             <th scope="col">Apellido</th>
             <th scope="col">Teléfono</th>
             
-            <th scope="col">Acciones</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col"">Modificar</th>
         </tr>
     </thead>
     <tbody>
@@ -27,12 +28,8 @@
                 <td>@item.Direccion</td>
                 <td>@item.Telefono</td>
                 
-                <td><form class="row g-3" asp-action="BorrarCadete" asp-controller="Cadete" method="post">
-    <div class="col-md-6 mt-3">
-        <input type="hidden" id="idCadete" name="idCadete" value="@item.Id">
-        <button type="submit" class="btn btn-primary" onclick="return confirm('¿Seguro que desea eliminar al cadete @item.Nombre?')">Eliminar Cadete</button>
-    </div>
-</form></td>
+                <td>@Html.ActionLink("Eliminar", "BorrarCadete", new { id = item.Id }, new { @class = "btnagre" })</td>    
+                <td>@Html.ActionLink("Modificar", "ModificarCadete", new { id = item.Id }, new { @class = "btnagre" })</td>
             </tr>
         }
     </tbody>

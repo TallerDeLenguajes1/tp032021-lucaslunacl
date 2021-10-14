@@ -46,3 +46,5 @@ C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021
 C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Pedido\VerClientes.cshtml.g.cs
 C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Pedido\VerPedidos.cshtml.g.cs
 C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\bin\Debug\net5.0\Cadetes.Json
+C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\bin\Debug\net5.0\Pedidos.json
+C:\Users\Lucas\Desktop\PRACTICOS FACULTAD\segundo\Taller de Lenguajes 2\tp032021-lucaslunacl\TP3-LUNACLARASO\TP3-LunaClaraso\obj\Debug\net5.0\Razor\Views\Cadete\ModificarCadete.cshtml.g.cs

@@ -42,14 +42,26 @@ namespace TP3_LunaClaraso.Controllers
             _BD.GuardarCadetes(nuevoCadete);
             return View("Index", _BD.Cadeteria.Cadetes);
         }
-        public IActionResult BorrarCadete(int idcadete)
+        public IActionResult BorrarCadete(int id)
         {
-            _BD.Cadeteria.Cadetes.RemoveAll(cadete => cadete.Id == idcadete);
-
-            _BD.EliminarCadete();
-
+            int i = 0;
+            foreach (var item in _BD.Cadeteria.Cadetes)
+            {
+                if (item.Id == id)
+                {
+                    _BD.EliminarCadete();
+                    break;
+                }
+                i++;
+            }
             return View("Index", _BD.Cadeteria.Cadetes);
         }
-       
+
+        public IActionResult ModificarCadete(int id)
+        {
+            Cadete cadete = _BD.Cadeteria.Cadetes.Where(a => a.Id == id).First();
+            return View(cadete);
+        }
+
     }
 }

@@ -87,6 +87,26 @@ namespace TP3_LunaClaraso.Controllers
             return View("VerPedidos", _BD.Cadeteria);
         }
 
+        public IActionResult EliminarPedido(int idPedido)
+        {
+            eliminarUnPedido(idPedido);
+            
+            return View("VerPedidos", _BD.Cadeteria);
+        }
+
+        public void eliminarUnPedido(int id)
+        {
+            Pedidos pedido = _BD.Cadeteria.Pedidos.Where(a => a.Nro == id).First();
+            _BD.Cadeteria.Pedidos.Remove(pedido);
+
+            quitarPedidoCadete(pedido);
+        }
+
+        public void quitarPedidoCadete(Pedidos pedido)
+        {
+            _BD.Cadeteria.Cadetes.ForEach(cad => cad.ListadoDePedidos1.Remove(pedido));
+        }
+
         // POST: PedidoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

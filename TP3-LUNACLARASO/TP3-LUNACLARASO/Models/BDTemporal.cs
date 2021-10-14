@@ -49,7 +49,12 @@ namespace TP3_LunaClaraso.Models
                 }
             }
         }
+        public void borrarCadete(int id)
+        {
+            Cadeteria.Cadetes.RemoveAt(id);
 
+            
+        }
         public void EliminarCadete()
         {
             string ruta = @"Cadetes.Json";
