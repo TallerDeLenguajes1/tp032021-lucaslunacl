@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TP3_LunaClaraso.Models;
 
 namespace TP3_LunaClaraso.Controllers
@@ -14,11 +9,13 @@ namespace TP3_LunaClaraso.Controllers
         static int id = 0;
         private readonly ILogger<CadeteController> _logger;
         private readonly BDTemporal _BD;
-        
-        public CadeteController(ILogger<CadeteController> logger, BDTemporal BD)
+        private readonly RepositorioCadete _cd;
+
+        public CadeteController(ILogger<CadeteController> logger, RepositorioCadete cd)
         {
-           _logger = logger;
-           _BD = BD;
+            _logger = logger;
+            _cd = cd;
+
         }
 
         // GET: CadeteController
@@ -33,15 +30,16 @@ namespace TP3_LunaClaraso.Controllers
         }
         public IActionResult VerCadetes()
         {
-            return View(_BD.Cadeteria.Cadetes);
+            return View(_cd.MostrarCadetes());
         }
-        public IActionResult DarAlta(string nombre, string direccion, long telefono)
+        
+        public IActionResult DarAlta(string nombre, string direccion, string telefono)
         {
-            Cadete nuevoCadete = new (++id, nombre, direccion, Convert.ToInt64(telefono));
-            _BD.Cadeteria.Cadetes.Add(nuevoCadete);
-            _BD.GuardarCadetes(nuevoCadete);
-            return View("Index", _BD.Cadeteria.Cadetes);
-        }
+            Cadete nuevoCadete = new (++id, nombre, direccion, telefono);
+            //_BD.Cadeteria.Cadetes.Add(nuevoCadete);
+            _cd.guardarCadete(nuevoCadete);
+            return View("Index", _cd.MostrarCadetes());
+        }/*
         public IActionResult BorrarCadete(int id)
         {
             int i = 0;
@@ -56,12 +54,19 @@ namespace TP3_LunaClaraso.Controllers
             }
             return View("Index", _BD.Cadeteria.Cadetes);
         }
-
+        */
         public IActionResult ModificarCadete(int id)
         {
-            Cadete cadete = _BD.Cadeteria.Cadetes.Where(a => a.Id == id).First();
+            Cadete cadete =_cd.MostrarCadeteID(id);
             return View(cadete);
         }
+        
+        public IActionResult Modify(Cadete cd)
+        {
+            _cd.ModificarCadete(cd);
 
+            return View("Index", _cd.MostrarCadetes());
+
+        }
     }
 }

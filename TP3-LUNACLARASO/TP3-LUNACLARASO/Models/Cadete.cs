@@ -10,9 +10,14 @@ namespace TP3_LunaClaraso.Models
         int id;
         string nombre;
         string direccion;
-        long telefono;
+        string telefono;
         List<Pedidos> ListadoDePedidos;
-        public Cadete(int id, string nombre, string direccion, long telefono)
+
+        public Cadete()
+        {
+        }
+
+        public Cadete(int id, string nombre, string direccion, string telefono)
         {
             Id = id;
             Nombre = nombre;
@@ -23,7 +28,7 @@ namespace TP3_LunaClaraso.Models
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public long Telefono { get => telefono; set => telefono = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
         public List<Pedidos> ListadoDePedidos1 { get => ListadoDePedidos; set => ListadoDePedidos = value; }
     }
 }
